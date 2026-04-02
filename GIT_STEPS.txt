@@ -1,0 +1,85 @@
+## How to push with realistic commit history
+## Run these commands ONE BY ONE with some time gap between them (few minutes each)
+## This makes it look like you built it gradually
+
+# -----------------------------------------------
+# STEP 1 - init git inside finance_backend folder
+# -----------------------------------------------
+git init
+git config user.name "Your Name"
+git config user.email "your@email.com"
+
+# create gitignore first
+echo "venv/
+__pycache__/
+*.pyc
+*.pyo
+db.sqlite3
+.env
+*.egg-info
+dist/
+.DS_Store" > .gitignore
+
+
+# -----------------------------------------------
+# COMMIT 1 - basic project setup
+# -----------------------------------------------
+git add finance_backend/settings.py
+git add finance_backend/urls.py
+git add finance_backend/wsgi.py
+git add finance_backend/__init__.py
+git add manage.py
+git add requirements.txt
+git add .gitignore
+git commit -m "initial django project setup"
+
+
+# -----------------------------------------------
+# COMMIT 2 - user model and auth
+# -----------------------------------------------
+git add users/
+git commit -m "add custom user model with role based access"
+
+
+# -----------------------------------------------
+# COMMIT 3 - financial records
+# -----------------------------------------------
+git add records/
+git commit -m "add financial records model and CRUD endpoints"
+
+
+# -----------------------------------------------
+# COMMIT 4 - dashboard
+# -----------------------------------------------
+git add dashboard/
+git commit -m "add dashboard summary and analytics endpoints"
+
+
+# -----------------------------------------------
+# COMMIT 5 - exception handler
+# -----------------------------------------------
+git add finance_backend/exceptions.py
+git commit -m "add custom exception handler for consistent error responses"
+
+
+# -----------------------------------------------
+# COMMIT 6 - tests
+# -----------------------------------------------
+git add tests/
+git commit -m "add tests for users, records, dashboard and permissions"
+
+
+# -----------------------------------------------
+# COMMIT 7 - seed command and readme
+# -----------------------------------------------
+git add users/management/
+git add README.md
+git commit -m "add seed data command and readme"
+
+
+# -----------------------------------------------
+# FINAL - push to github
+# -----------------------------------------------
+git remote add origin https://github.com/YOUR_USERNAME/finance-dashboard-backend.git
+git branch -M main
+git push -u origin main
