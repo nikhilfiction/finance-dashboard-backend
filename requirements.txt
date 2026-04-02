@@ -1,0 +1,15 @@
+# Core
+Django==5.0.6
+djangorestframework==3.15.2
+
+# JWT Authentication
+djangorestframework-simplejwt==5.3.1
+
+# Filtering
+django-filter==24.2
+
+# API Documentation (Swagger / ReDoc)
+drf-spectacular==0.27.2
+
+# WSGI server (for production)
+gunicorn==22.0.0
